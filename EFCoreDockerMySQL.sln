@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreDockerMySQL", "EFCoreDockerMySQL\EFCoreDockerMySQL.csproj", "{901E8F18-025A-4D20-9F08-57C2B47136C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{901E8F18-025A-4D20-9F08-57C2B47136C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{901E8F18-025A-4D20-9F08-57C2B47136C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{901E8F18-025A-4D20-9F08-57C2B47136C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{901E8F18-025A-4D20-9F08-57C2B47136C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3805042D-B40B-4E14-AF28-50811939A69E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  efcoredockermysql:
+    image: efcoredockermysql
+    build:
+      context: ./EFCoreDockerMySQL
+      dockerfile: Dockerfile

@@ -1,8 +1,30 @@
 version: '3'
 
 services:
+  mysql:
+    image: mysql:5.7.18
+    container_name: efcoredockermysql-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "p4ssw0r#"
+      MYSQL_DATABASE: "efcoredockermysql"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    restart: always
+    networks:
+      - efcoredockermysql-net
   efcoredockermysql:
     image: efcoredockermysql
     build:
       context: ./EFCoreDockerMySQL
       dockerfile: Dockerfile
+    depends_on:
+      - mysql
+    networks:
+      - efcoredockermysql-net
+
+volumes:
+  mysql-data:
+
+networks:
+  efcoredockermysql-net:
+    driver: bridge

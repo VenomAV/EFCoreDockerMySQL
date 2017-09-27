@@ -9,6 +9,7 @@ services:
       MYSQL_DATABASE: "efcoredockermysql"
     volumes:
       - ./mysql-data:/var/lib/mysql
+      - ./mysql-initdb:/docker-entrypoint-initdb.d
     restart: always
     networks:
       - efcoredockermysql-net
@@ -24,6 +25,7 @@ services:
 
 volumes:
   mysql-data:
+  mysql-initdb:
 
 networks:
   efcoredockermysql-net:

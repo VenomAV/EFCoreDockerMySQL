@@ -36,6 +36,10 @@ namespace EFCoreDockerMySQL
                 if (david != null)
                 {
                     david.Surname += "*";
+                    if (david.Email == null)
+                    {
+                        david.Email = "david.gilmour@gmail.com";
+                    }
                 }
                 else
                 {
@@ -56,7 +60,7 @@ namespace EFCoreDockerMySQL
             {
                 foreach (var person in context.People)
                 {
-                    Console.WriteLine($"{person.Name} {person.Surname}");
+                    Console.WriteLine($"{person.Name} {person.Surname}<{person.Email}>");
                 }
             }
         }

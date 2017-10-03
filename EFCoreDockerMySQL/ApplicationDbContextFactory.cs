@@ -9,7 +9,7 @@ namespace EFCoreDockerMySQL
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             return new ApplicationDbContext(new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseMySql(Program.Configuration.GetConnectionString("DefaultConnection"))
+                .UseMySql(Program.Configuration.GetConnectionString("MigrationConnection"))
                 .Options);
         }
     }

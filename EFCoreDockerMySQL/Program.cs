@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 
 namespace EFCoreDockerMySQL
@@ -9,9 +10,21 @@ namespace EFCoreDockerMySQL
         {
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
-            builder.UseMySql("server=efcoredockermysql-mysql;userid=root;pwd=p4ssw0r#;port=3306;database=efcoredockermysql;sslmode=none;");
+            builder.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
             AddOrUpdateDavid(builder.Options);
             ShowAllPeople(builder.Options);
+        }
+
+        public static IConfigurationRoot Configuration
+        {
+            get
+            {
+                var environmentName = Environment.GetEnvironmentVariable("DOTNETCORE_ENVIRONMENT");
+                var builder = new ConfigurationBuilder()
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                    .AddJsonFile($"appsettings.{environmentName}.json", optional: true);
+                return builder.Build();
+            }
         }
 
         private static void AddOrUpdateDavid(DbContextOptions<ApplicationDbContext> options)

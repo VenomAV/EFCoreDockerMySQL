@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.0.0" />
   </ItemGroup>
 
@@ -17,6 +18,9 @@
   <ItemGroup>
     <None Update=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
+    </None>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
